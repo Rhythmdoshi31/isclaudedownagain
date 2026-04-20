@@ -10,7 +10,7 @@ export async function GET(request: Request) {
     if (process.env.NODE_ENV !== "development") {
       const authHeader = request.headers.get("authorization");
       if (!authHeader || authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
-        return new NextResponse("unauthorized" + authHeader, { status: 401 });
+        return new NextResponse("unauthorized " + authHeader + " " + (authHeader === `Bearer ${process.env.CRON_SECRET}`), { status: 401 });
       }
     }
 
