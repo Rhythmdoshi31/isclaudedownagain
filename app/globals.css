@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --color-yellow: #FFE600;
+  --color-green: #3DD45A;
+  --color-orange: #FF9500;
+  --color-red: #FF3B30;
+  --color-black: #000000;
+  --color-white: #ffffff;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-black font-mono lowercase;
+  }
+}
+
+@layer utilities {
+  .y2k-border {
+    border: 3px solid var(--color-black);
+  }
+
+  .y2k-shadow {
+    box-shadow: 4px 4px 0px 0px var(--color-black);
+  }
+
+  .y2k-shadow-hover:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px 0px var(--color-black);
+  }
+
+  .y2k-shadow-active:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px 0px var(--color-black);
+  }
+
+  .y2k-card {
+    border: 3px solid var(--color-black);
+    box-shadow: 4px 4px 0px 0px var(--color-black);
+    border-radius: 14px;
+    background-color: var(--color-white);
+    transition: all 200ms;
+  }
+
+  .y2k-pill {
+    border: 3px solid var(--color-black);
+    box-shadow: 4px 4px 0px 0px var(--color-black);
+    border-radius: 20px;
+    transition: all 200ms;
+  }
+
+  .y2k-button {
+    border: 3px solid var(--color-black);
+    box-shadow: 4px 4px 0px 0px var(--color-black);
+    border-radius: 20px;
+    background-color: var(--color-yellow);
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    transition: all 200ms;
+  }
+
+  .y2k-button:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px 0px var(--color-black);
+  }
+
+  .y2k-button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px 0px var(--color-black);
+  }
+}
